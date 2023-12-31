@@ -61,9 +61,6 @@ class ServiceBloc extends Bloc<ServiceEvent, ServiceState> {
           } else {
             emit(ConnectionFailState(event.peerName, event.peerAddress));
           }
-
-          // TODO: Remove later
-          emit(ConnectionSuccessState('Jarvis', 'address'));
         }
 
         void onConnect(String name, String address) {
@@ -85,7 +82,7 @@ class ServiceBloc extends Bloc<ServiceEvent, ServiceState> {
             case 'smart reply':
               {
                 emit(GeneratingSmartReply());
-                result = await smartReply(map['content'].toString());
+                result = await generateSmartReply(map['content'].toString());
               }
             default:
               {
@@ -136,9 +133,6 @@ class ServiceBloc extends Bloc<ServiceEvent, ServiceState> {
             if (!socketStatus) {
               emit(ConnectToSocketFailState());
             }
-
-            //TODO: Remove later
-            emit(ConnectToSocketSuccessState());
           } else {
             emit(ConnectToSocketFailState());
           }
@@ -227,8 +221,9 @@ class ServiceBloc extends Bloc<ServiceEvent, ServiceState> {
     return 'Latitude: $lat, Longitude: $long';
   }
 
-  Future<String> smartReply(String message) async {
-    SmartReply smartReply = SmartReply();
+  final SmartReply smartReply = SmartReply();
+
+  Future<String> generateSmartReply(String message) async {
     smartReply.addMessageToConversationFromLocalUser(
       message.toString(),
       DateTime.now().millisecondsSinceEpoch,

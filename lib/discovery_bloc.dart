@@ -17,43 +17,43 @@ class DiscoveryBloc extends Bloc<DiscoveryEvent, DiscoveryState> {
           }
         }
 
-        List<DiscoveredPeers> peers = [
-          const DiscoveredPeers(
-              deviceName: 'Jarvis',
-              deviceAddress: 'address',
-              isGroupOwner: false,
-              isServiceDiscoveryCapable: true,
-              primaryDeviceType: '',
-              secondaryDeviceType: '',
-              status: 0),
-          const DiscoveredPeers(
-              deviceName: 'Riptide',
-              deviceAddress: 'address',
-              isGroupOwner: false,
-              isServiceDiscoveryCapable: true,
-              primaryDeviceType: '',
-              secondaryDeviceType: '',
-              status: 0),
-          const DiscoveredPeers(
-              deviceName: 'Divyan',
-              deviceAddress: 'address',
-              isGroupOwner: false,
-              isServiceDiscoveryCapable: true,
-              primaryDeviceType: '',
-              secondaryDeviceType: '',
-              status: 0),
-          const DiscoveredPeers(
-              deviceName: 'Arya',
-              deviceAddress: 'address',
-              isGroupOwner: false,
-              isServiceDiscoveryCapable: true,
-              primaryDeviceType: '',
-              secondaryDeviceType: '',
-              status: 0),
-        ];
-
-        // TODO: Remove later
-        emit(PeersDiscoveredState(peers));
+        // List<DiscoveredPeers> peers = [
+        //   const DiscoveredPeers(
+        //       deviceName: 'Jarvis',
+        //       deviceAddress: 'address',
+        //       isGroupOwner: false,
+        //       isServiceDiscoveryCapable: true,
+        //       primaryDeviceType: '',
+        //       secondaryDeviceType: '',
+        //       status: 0),
+        //   const DiscoveredPeers(
+        //       deviceName: 'Riptide',
+        //       deviceAddress: 'address',
+        //       isGroupOwner: false,
+        //       isServiceDiscoveryCapable: true,
+        //       primaryDeviceType: '',
+        //       secondaryDeviceType: '',
+        //       status: 0),
+        //   const DiscoveredPeers(
+        //       deviceName: 'Divyan',
+        //       deviceAddress: 'address',
+        //       isGroupOwner: false,
+        //       isServiceDiscoveryCapable: true,
+        //       primaryDeviceType: '',
+        //       secondaryDeviceType: '',
+        //       status: 0),
+        //   const DiscoveredPeers(
+        //       deviceName: 'Arya',
+        //       deviceAddress: 'address',
+        //       isGroupOwner: false,
+        //       isServiceDiscoveryCapable: true,
+        //       primaryDeviceType: '',
+        //       secondaryDeviceType: '',
+        //       status: 0),
+        // ];
+        //
+        // // TODO: Remove later
+        // emit(PeersDiscoveredState(peers));
 
         await emit.onEach(
           _flutterP2pConnection.streamPeers(),
