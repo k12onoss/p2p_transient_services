@@ -121,11 +121,12 @@ packages:
   flutter_p2p_connection:
     dependency: "direct main"
     description:
-      name: flutter_p2p_connection
-      sha256: "788b228c89a5260be1ef539584a2f7a78df853056df51ae8f0e8aa459a6bc6a0"
-      url: "https://pub.dev"
-    source: hosted
-    version: "2.0.1"
+      path: "."
+      ref: HEAD
+      resolved-ref: d7fee14da69e5a8c9fec35de3ad122c13ea9655b
+      url: "https://github.com/ugo-studio/flutter_p2p_connection.git"
+    source: git
+    version: "2.0.3"
   flutter_screenutil:
     dependency: "direct main"
     description:
@@ -204,10 +205,10 @@ packages:
     dependency: "direct main"
     description:
       name: go_router
-      sha256: c5fa45fa502ee880839e3b2152d987c44abae26d064a2376d4aad434cf0f7b15
+      sha256: ca7e4a2249f96773152f1853fa25933ac752495cdd7fdf5dafb9691bd05830fd
       url: "https://pub.dev"
     source: hosted
-    version: "12.1.3"
+    version: "13.0.0"
   google_mlkit_smart_reply:
     dependency: "direct main"
     description:
@@ -216,6 +217,14 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "0.9.0"
+  http:
+    dependency: "direct main"
+    description:
+      name: http
+      sha256: d4872660c46d929f6b8a9ef4e7a7eff7e49bbf0c4ec3f385ee32df5119175139
+      url: "https://pub.dev"
+    source: hosted
+    version: "1.1.2"
   http_parser:
     dependency: transitive
     description:
